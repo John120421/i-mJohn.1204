@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Store</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Login form styles -->
+    <link href="css/custom.css" rel="stylesheet"> <!-- Store custom styles -->
+</head>
+<body>
+    <!-- Login Section -->
+<div class="container" id="login-section" style="margin-top: 50px;">
+    <h2 class="text-center mb-4">Welcome Back!</h2>
+    <form id="loginForm" class="p-4 border rounded shadow-sm bg-light">
+        <div class="form-group mb-3">
+            <label for="username" class="form-label">Username:</label>
+            <input 
+                type="text" 
+                id="username" 
+                name="username" 
+                class="form-control" 
+                placeholder="Enter your username" 
+                required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                class="form-control" 
+                placeholder="Enter your password" 
+                required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+    <p class="text-center mt-3">
+        Don't have an account? <a href="register.html">Register here</a>
+    </p>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get form values
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        // Validate input
+        if (username === "" || password === "") {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // Placeholder for real authentication logic
+        if (username === "testuser" && password === "password123") { // Example credentials
+            alert('Login successful! Redirecting to store...');
+            document.getElementById('login-section').style.display = 'none'; // Hide login section
+            document.getElementById('store-section').style.display = 'block'; // Show store section
+        } else {
+            alert("Invalid username or password. Please try again.");
+        }
+    });
+</script>
+
+    <!-- Store Section -->
+    <div id="store-section" style="display: none;">
+        <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Logo and responsive toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                	<span class="glyphicon glyphicon-fire"></span> 
+                	A&J Clothing
+                </a>
+            </div>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Products</a>
+                    </li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+						<ul class="dropdown-menu" aria-labelledby="about-us">
+							<li><a href="#">Engage</a></li>
+							<li><a href="#">Pontificate</a></li>
+							<li><a href="#">Synergize</a></li>
+						</ul>
+					</li>
+                    <li>
+                        <a href="#">My Account</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+
+	<!-- Feature -->
+	<div class="jumbotron feature">
+		<div class="container">
+			<h1><span class="glyphicon glyphicon-equalizer"></span> A&J Clothing</h1>
+			<p>Discover the perfect blend of style, comfort, and quality at our clothing shop. From everyday essentials to trendy pieces, we offer a wide range of fashionable options for every occasion. Whether you’re looking for casual wear, office attire, or something special, our curated collection has something for everyone. With excellent customer service, affordable prices, and the latest trends, shopping with us is always a great experience!</p>
+			<p><a class="btn btn-primary" href="#">Engage Now</a></p>
+		</div>
+	</div>
+
+
+    <!-- Heading -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="text-center">Unique Quality</h1>
+                <p class="lead text-center">Our unique quality sets us apart by blending innovation, craftsmanship, and attention to detail. Each product is thoughtfully designed and meticulously crafted to deliver unmatched durability, style, and performance. With a focus on excellence, we ensure that every item exceeds expectations, providing you with something truly exceptional and one-of-a-kind. Experience the difference that only unique quality can offer!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Promos -->
+	<div class="container-fluid">
+        <div class="row promo">
+        	<a href="#">
+				<div class="col-md-4 promo-item item-1">
+					<h3>
+						Men's Apperal
+					</h3>
+				</div>
+            </a>
+            <a href="#">
+				<div class="col-md-4 promo-item item-2">
+					<h3>
+						Woman's Apperal
+					</h3>
+				</div>
+            </a>
+			
+			<a href="#">
+				<div class="col-md-4 promo-item item-3">
+					<h3>
+						Accessories
+					</h3>
+				</div>
+            </a>
+        </div>
+    </div><!-- /.container-fluid -->
+
+	<!-- Featured Products -->
+	<div class="container">
+		<h1 class="text-center">World Class Products</h1>
+		<div class="row">
+		
+			<!-- Product 1 -->
+			<div class="col-sm-6 col-md-3">
+				<div class="thumbnail featured-product">
+					<a href="#">
+						<img src="images/image1.jpg" alt="">
+					</a>
+					<div class="caption">
+						<h3>Floral Long Sleeves Top</h3>
+						<p>Add elegance to your wardrobe with this Floral Long Sleeves Top. Featuring a beautiful floral print and a relaxed fit, it's perfect for casual outings or formal events. Made from lightweight, breathable fabric, it offers all-day comfort with timeless style. Versatile and chic, it’s a must-have for any occasion!</p>
+						<p class="price">₱95.00</p>
+
+						<!-- Input Group -->
+						<div class="input-group">
+							<input type="number" class="form-control" value="1">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="button">
+									<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 
+									Add to Cart
+								</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Product 2 -->
+			<div class="col-sm-6 col-md-3">
+				<div class="thumbnail featured-product">
+					<a href="#">
+						<img src="images/Image2.jpg" alt="">
+					</a>
+					<div class="caption">
+						<h3>Popover shirt - Blue/Striped</h3>
+						<p>Stay effortlessly stylish with the Popover Shirt in Blue/Striped. Featuring a relaxed fit and timeless stripe pattern, this shirt is perfect for both work and casual outings. Crafted from soft, breathable fabric, it ensures comfort and ease throughout the day. Pair it with jeans or chinos for a polished yet laid-back look.</p>
+						<p class="price"><s>₱150.00</s> ₱100.00</p>
+
+						<!-- Input Group -->
+						<div class="input-group">
+							<input type="number" class="form-control" value="1">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="button">
+									<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 
+									Add to Cart
+								</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Product 3 -->
+			<div class="col-sm-6 col-md-3">
+				<div class="thumbnail featured-product">
+					<a href="#">
+						<img src="images/Image3.jpg" alt="">
+					</a>
+					<div class="caption">
+						<h3>Classy Blouse</h3>
+						<p>Elegance meets simplicity with the Classy Blouse. Designed with a timeless silhouette and premium fabric, this blouse is perfect for any occasion, from office wear to evening outings. Its tailored fit and refined details add a touch of sophistication to your wardrobe. Pair it with trousers or a skirt for a polished.</p>
+						<p class="price">₱220.00</p>
+
+						<!-- Input Group -->
+						<div class="input-group">
+							<input type="number" class="form-control" value="1">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="button">
+									<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 
+									Add to Cart
+								</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Product 4 -->
+			<div class="col-sm-6 col-md-3">
+				<div class="thumbnail featured-product">
+					<a href="#">
+						<img src="images/Image4.jpg" alt="">
+					</a>
+					<div class="caption">
+						<h3>Womens Converse One Star Dress</h3>
+						<p>Stay effortlessly cool with the Women's Converse One Star Dress. Combining sporty vibes with casual chic, this dress features a relaxed fit and iconic One Star branding for a laid-back yet stylish look. Made from soft, breathable fabric, it offers all-day comfort.</p>
+						<p class="price">₱95.00</p>
+
+						<!-- Input Group -->
+						<div class="input-group">
+							<input type="number" class="form-control" value="1">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="button">
+									<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 
+									Add to Cart
+								</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div><!-- /.container -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h1 class="text-center">Find Us</h1>
+            <div class="footer-map"></div>
+            <div class="row text-center">
+                <p class="lead">Kasiglahan Village, Rodriguez, Rizal</p>
+                <h2>Contact Us</h2>
+                <p class="lead"><span class="glyphicon glyphicon-phone-alt"></span> +639 1234 654 211<br>john@gmail.com</p>
+            </div>
+
+            <!-- Footer Links -->
+		<div class="footer-info">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 footer-info-item">
+						<h3>Information</h3>
+						<ul class="list-unstyled">
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Customer Service</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Sitemap</a></li>
+							<li><a href="#">Orders &amp; Returns</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-4 footer-info-item">
+						<h3>My Account</h3>
+						<ul class="list-unstyled">
+							<li><a href="#">Sign In</a></li>
+							<li><a href="#">View Cart</a></li>
+							<li><a href="#">My Wishlist</a></li>
+							<li><a href="#">Track My Order</a></li>
+							<li><a href="#">Help</a></li>
+						</ul>	
+					</div>
+					<div class="col-sm-4 footer-info-item">
+						<h3><span class="glyphicon glyphicon-list-alt"></span> Newsletter</h3>
+						<p>Sign up for exclusive offers.</p>
+						<div class="input-group">
+							<input type="email" class="form-control" placeholder="Enter your email address">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="button">
+									Subscribe!
+								</button>
+							</span>
+						</div>
+					</div>
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+        </div>
+        
+        <!-- Copyright etc -->
+        <div class="small-print">
+        	<div class="container">
+        		<p><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
+        		<p>Copyright &copy; Only us.com 2024 </p>
+        	</div>
+        </div>
+        
+	</footer>
+
+	
+    <!-- jQuery -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<!-- IE10 viewport bug workaround -->
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+	
+</body>
+
+</html>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Login successful! Redirecting to store...');
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('store-section').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
